@@ -1,0 +1,19 @@
+@test3_HostAddress = http://localhost:5240
+
+###
+POST {{test3_HostAddress}}/api/auth/login
+Content-Type: application/json
+{
+  "Username": "leo",
+  "Password": "123",
+  "RefreshToken": ""
+}
+###
+GET {{test3_HostAddress}}/api/protected
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImxlbyIsIm5iZiI6MTczMDY5NTc0NiwiZXhwIjoxNzMwNjk2NjQ2LCJpYXQiOjE3MzA2OTU3NDYsImlzcyI6IlR1QXBwIiwiYXVkIjoiVHVBcHBVc3VhcmlvcyJ9.qo8G_wFFqgyRgYqKtDr0CmLO7MxDgRZHzGu9fOLVmuU
+
+###
+POST {{test3_HostAddress}}/api/auth/refresh-token
+Content-Type: application/json
+"4fad49b3-d08a-4ed9-9d99-358dab8e8836"
